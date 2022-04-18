@@ -4,7 +4,6 @@
 #include <QObject>
 #include <QTcpServer>
 #include <QTcpSocket>
-#include <QString>
 
 namespace communication {
 	const QString HOST_ADDRESS = "127.0.0.1";
