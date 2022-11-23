@@ -23,7 +23,7 @@ namespace communication {
 
 		QByteArray ingoing_message = tcp_socket->readAll();
 		cout << ingoing_message.size() << " bytes received\n";
-		cout << "Ingoing message: " << QString(ingoing_message).toStdString() << endl;
+		cout << "Ingoing message: " << QString(ingoing_message).toStdString() << '\n' << endl;
 
 		this->timer.start();
 	}
@@ -34,6 +34,6 @@ namespace communication {
 		QByteArray outgoing_message;
 		outgoing_message.append("Bip!");
 		cout << "Outgoing message: " << QString(outgoing_message).toStdString() << '\n';
-		cout << tcp_socket->write(outgoing_message) << " bytes sent" << endl;
+		cout << tcp_socket->write(outgoing_message) << " bytes sent\n" << endl;
 	}
 } // namespace communication

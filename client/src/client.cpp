@@ -17,12 +17,12 @@ namespace communication {
 	bool Client::send() const {
 		this->tcp_socket->connectToHost(SERVER_ADDRESS, PORT);
 		if (this->tcp_socket->waitForConnected()) {
-			cout << "Connected to the server" << endl;
+			cout << "Connected to the server\n" << endl;
 
 			QByteArray outgoing_message;
 			outgoing_message.append("Hello!");
 			cout << "Outgoing message: " << QString(outgoing_message).toStdString() << '\n';
-			cout << this->tcp_socket->write(outgoing_message) << " bytes sent" << endl;
+			cout << this->tcp_socket->write(outgoing_message) << " bytes sent\n" << endl;
 
 			return true;
 		}
@@ -35,6 +35,6 @@ namespace communication {
 	void Client::on_readyRead() {
 		QByteArray ingoing_message = this->tcp_socket->readAll();
 		cout << ingoing_message.size() << " bytes received\n";
-		cout << "Ingoing message: " << QString(ingoing_message).toStdString() << endl;
+		cout << "Ingoing message: " << QString(ingoing_message).toStdString() << '\n' << endl;
 	}
 } // namespace communication

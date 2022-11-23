@@ -14,7 +14,7 @@ namespace communication {
 
 	bool Server::start() {
 		if (this->tcp_server.listen(QHostAddress(HOST_ADDRESS), PORT)) {
-			cout << "Server listening..." << endl;
+			cout << "Server listening...\n" << endl;
 			return true;
 		}
 		else {
